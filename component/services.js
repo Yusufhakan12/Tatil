@@ -11,7 +11,7 @@ const Service=({data})=>{
         
       
         data={data}
-        keyExtractor={i=>i.d}
+        keyExtractor={i=>i.id}
         renderItem={({item})=>{
 
             return(

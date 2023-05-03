@@ -108,3 +108,39 @@ export const SERVICE=[
 },
 
 ];
+
+export const CIRCLE=[
+
+  {
+    id:1,
+    title:"Airport",
+    image:require("../../assets/flight.png"),
+
+  
+  
+  },
+  {
+    id:2,
+    title:"Hotel",
+    image:require("../../assets/hotel.png"),
+
+  
+  
+  },
+  {
+    id:3,
+    title:"Taxi",
+    image:require("../../assets/car.png"),
+   
+  
+  
+  },
+  {
+    id:4,
+    title:"More",
+    image:require("../../assets/more.png"),
+   
+  
+  
+  },
+];

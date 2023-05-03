@@ -1,15 +1,30 @@
 import React from "react";
-import { View,Text } from "react-native";
+import { View,Text, FlatList } from "react-native";
 import { Image } from "react-native-elements";
 import { StyleSheet } from "react-native";
-const Circle=(props)=>{
+const Circle=({data})=>{
 return (
-    <View style={styles.Container}>
+   
+    <FlatList
+     horizontal
+     showsHorizontalScrollIndicator={false}
+     data={data}
+     keyExtractor={i=>i.id}
+     renderItem={({item})=>{
+        return(
 
-    <Image source={props.source} style={styles.ImageStyle}/>
-    <Text style={styles.TextStyle}>{props.title}</Text>
-    </View>
+            <View style={styles.Container}>
 
+            <Image source={item.image} style={styles.ImageStyle}/>
+            <Text style={styles.TextStyle}>{item.title}</Text>
+            </View>
+
+        );
+
+     }}
+    
+    
+    />
 
 
 );
@@ -31,7 +46,11 @@ const styles=StyleSheet.create(({
         backgroundColor:"#F6F8FE",
         height:63,
         width:63,
-        alignItems:"center"
+        alignItems:"center",
+        justifyContent:"space-between",
+        margin:13
+        
+        
     },
     ImageStyle:{
         height:35,
