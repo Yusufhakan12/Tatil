@@ -1,4 +1,5 @@
 import Home from "../screens/home";
+import SearchDestination from "../component/searchDestination";
 import Favorites from "../screens/favorite";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -15,10 +16,24 @@ const HomeStack=()=>{
         <Stack.Navigator
             screenOptions={{
                 headerShown:false,
+                
             }}
         >
 
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen 
+            options={{
+              title:"Search Destination" ,
+              headerShown:true,
+              headerTitleStyle:{
+                fontSize:18,
+                color:"#111111",
+                fontFamily:"PlusJakartaSans-Bold",
+                
+              }
+            }} 
+            name="Search" 
+            component={SearchDestination} />
         </Stack.Navigator>
     );
 }
@@ -43,7 +58,7 @@ return(
 
     <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeStack}
         options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: "center", justifyContent: "center" }}>

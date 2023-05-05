@@ -1,15 +1,18 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {View, Image, Text, ScrollView} from 'react-native';
-import {Badge} from 'react-native-elements';
+import {Badge, SearchBar} from 'react-native-elements';
 import Circle from '../component/circle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TOP_PLACES, TOUR_GUİDE, SERVICE,CIRCLE} from '../src/data';
 import FrequentlyDetail from '../component/frequentlyDetail';
 import TourGuide from '../component/tour_guide';
 import Service from '../component/services';
-
-const Home = () => {
+import SearchBarnew from '../component/searchBar';
+import { useState } from 'react';
+const Home = ({navigation}) => {
+const [term,setTerm]=useState('');
+console.log(term)
   return (
     <View>
     <ScrollView>
@@ -44,7 +47,15 @@ const Home = () => {
             </Icon>
           </View>
         </View>
-        <View style={styles.deneme}></View>
+        <View style={styles.deneme}>
+
+              <SearchBarnew
+              value={term}
+              onChangevalue={(newTerm)=>setTerm(newTerm)}
+              
+              />
+
+        </View>
         <View style={[styles.deneme,]}>
           <Circle data={CIRCLE}/>
           
